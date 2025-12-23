@@ -1,4 +1,4 @@
-Introduction
+Introduction:-  
 The rapid growth of digital platforms has transformed 
 traditional recruitment processes into fully online, 
 technology-driven systems. Modern job seekers and 
@@ -20,7 +20,7 @@ designed to be production-ready while remaining flexible
 for future enhancements such as analytics, 
 recommendations, and notifications.
 
-Objectives of the Project
+Objectives of the Project:-  
 The primary objective of the JobNest project is to design 
 and implement a scalable job board platform that 
 supports both applicants and recruiters with clearly 
@@ -41,7 +41,7 @@ and profile photo uploads
 • To design a backend architecture that follows 
 RESTful principles and industry best practices
 
-Scope of the Project
+Scope of the Project:-  
 The scope of JobNest includes both applicant-side and 
 recruiter-side functionalities. The platform supports end￾to-end job application workflows while maintaining clear 
 separation of responsibilities based on user roles.
@@ -59,7 +59,7 @@ Out of Scope:
 These features can be incorporated in future versions of 
 the application.
 
-System Architecture
+System Architecture:-  
 JobNest follows a three-tier client–server architecture, 
 ensuring modularity and scalability.
 • Presentation Layer: Built using React with Vite, 
@@ -75,7 +75,7 @@ communication, while middleware ensures protected
 routes and role enforcement. Uploaded files are stored 
 securely and served using controlled access.
 
-Technologies Used
+Technologies Used:- 
 1 Frontend Technologies
 • React.js (Vite): For building a modern, component￾based user interface
 • HTML5 & CSS3: For structure and styling
@@ -97,7 +97,7 @@ modeling
 • Git & GitHub
 • Postman for API testing
 
-Functional Modules
+Functional Modules:-  
 1 User Registration Module
 Allows applicants and recruiters to create accounts with 
 validated inputs. Passwords are hashed using bcrypt 
@@ -124,7 +124,7 @@ application is tracked with a status (applied, reviewed,
 shortlisted, rejected). Recruiters can update application 
 statuses.
 
-Database Design (Schemas)
+Database Design (Schemas):-  
 1 User Schema
 • Full Name
 • Email
@@ -146,7 +146,7 @@ Database Design (Schemas)
 • Application Status
 • Applied Date
 
-Implementation Details
+Implementation Details:-  
 The frontend is implemented using React components 
 with state management using hooks. The backend APIs 
 are built using Express.js, following REST principles. 
@@ -167,19 +167,19 @@ application workflow
 • Improved understanding of full-stack web 
 development
 
-Future Enhancements
+Future Enhancements:-  
 • Recruiter and Admin dashboards
 • Resume upload and parsing
 • Job recommendation system
 • Email notifications
 • Advanced filtering and analytics
-Conclusion
+Conclusion:-  
 The Job Application Platform provides an efficient and 
 scalable solution for job seekers to explore and apply for 
 jobs online. The project demonstrates practical 
 implementation of full-stack development concepts and 
 can be extended into a complete recruitment system.
-References
+References:-  
 • https://react.dev/ (React Documentation)
 • https://nodejs.org/en/docs (Node.js Documentation)
 • https://www.mongodb.com/docs/ (MongoDB 
