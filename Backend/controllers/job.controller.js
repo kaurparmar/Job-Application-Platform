@@ -1,4 +1,5 @@
 import {Job} from "../models/job.model.js"
+import mongoose from "mongoose";
 // Admin job posting
 export const postJob = async(req,res)=>{
     try{
@@ -48,9 +49,9 @@ export const getAllJobs = async (req,res)=>{
     })
     .sort({createdAt:-1})
     
-    if(jobs.length===0){
-        return res.status(404).json({message:"No jobs found", status: false})
-    }
+    // if(jobs.length===0){
+    //     return res.status(404).json({message:"No jobs found", status: false})
+    // }
     return res.status(200).json({
   success: true,
   jobs
@@ -68,13 +69,15 @@ export const getJobById = async(req,res)=>{
         if (!mongoose.Types.ObjectId.isValid(jobId)) {
             return res.status(400).json({ 
                 message: "Invalid Job ID format", 
-                status: false 
+                status: false
             });
         }
-        const job = await Job.findById(jobId)
-        if(!job){
-            return res.status(404).json({message:"Job not found",status: false});
-        }
+        const job = await Job.findById(jobId).populate({
+            path:"application",
+        })
+        // if(!job){
+        //     return res.status(404).json({message:"Job not found",status: false});
+        // }
         return res.status(200).json({job,status:true})
     }
     catch(error){
@@ -89,10 +92,10 @@ export const getAdminJobs = async(req,res)=>{
     try{
         const adminId=req.id
         const jobs = await Job.find({created_by: adminId})
-        if(!jobs || jobs.length === 0){
-            return res.status(404).json({message:"No Jobs found",status: false});
+        // if(!jobs || jobs.length === 0){
+        //     return res.status(404).json({message:"No Jobs found",status: false});
             
-        }
+        // }
         return res.status(200).json({jobs,status:true})
     }
     catch(error){

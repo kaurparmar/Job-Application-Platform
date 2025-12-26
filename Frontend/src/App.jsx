@@ -11,6 +11,7 @@ import Jobs from './components/components_lite/Jobs.jsx'
 import Browse from './components/components_lite/Browse.jsx'
 import Profile from './components/components_lite/Profile.jsx'
 import Description from './components/components_lite/Description.jsx'
+import Companies from './components/admincomponents/Companies.jsx'
 import './App.css'
 const appRouter = createBrowserRouter([
   {path:'/',
@@ -44,6 +45,11 @@ const appRouter = createBrowserRouter([
     element:<Description/>
   },
   
+  //admin
+
+  {path:'/admin/companies',
+    element:<Companies/>
+  },
   
 ])
 function App() {

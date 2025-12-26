@@ -21,6 +21,7 @@ function Job({job}) {
   } = job;
   const navigate=useNavigate()
   const [isBookmarked, setIsBookmarked] = React.useState(false)
+  
 
   // const allJobs = useSelector((state)=>state.jobs?.allJobs || [])
   const jobId="jdfj";

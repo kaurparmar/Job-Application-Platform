@@ -41,9 +41,25 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <ul className="flex flex-row items-center gap-6 list-none p-0 m-0 font-medium">
-            <li><Link to="/Home" className="cursor-pointer">Home</Link></li>
+            {
+              user && user.role === "recruiter"?(
+                <>
+                <li><Link to="/admin/companies" className="cursor-pointer">Companies</Link></li>
+                <li ><Link to="/admin/jobs"className="cursor-pointer">Jobs</Link></li>
+                
+          
+                </>
+              ):
+              (
+                <>
+
+                <li><Link to="/Home" className="cursor-pointer">Home</Link></li>
             <li ><Link to="/Browse"className="cursor-pointer">Browse</Link></li>
             <li><Link to="/Jobs" className="cursor-pointer">Jobs</Link></li>
+              </>
+              )
+            }
+            
           </ul>
         {!user ? (
             <div className="flex items-center gap-5">
@@ -68,15 +84,26 @@ function Navbar() {
               alt="User Avatar"
               size={60}
             />
-                    <p className="font-semibold mb-2 text-blue-">John Doe</p>
+                    <p className="font-semibold mb-2 text-blue-">
+                      {user?.fullname}
+                    </p>
                     </div>
                     {/* <Link to="/profile"> */}
-                        <button className="w-full cursor-pointer bg-gray-200 text-gray-800 px-4 py-2 rounded mb-2 hover:bg-gray-300">
+
+                    {
+                      user&& user.role === "applicant" && (
+                         <button className="w-full cursor-pointer bg-gray-200 text-gray-800 px-4 py-2 rounded mb-2 hover:bg-gray-300">
                           <Link to="/Profile">
                             Profile
                             </Link>
                         </button>
+                      )
+                    }
+
+                       
                     {/* </Link> */}
+
+
 
                     <button 
                     onClick={logoutHandler} 

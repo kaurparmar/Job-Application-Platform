@@ -9,11 +9,16 @@ import {
 const router = express.Router();
 
 // 1. Static routes first
-router.route("/get").get(authenticateToken, getAllJobs);
-router.route("/post").post(authenticateToken, postJob);
-router.route("/getadminjobs").get(authenticateToken, getAdminJobs);
+router.get("/jobs", authenticateToken, getAllJobs);
 
-// 2. Dynamic routes (with :id) LAST
-router.route("/get/:id").get(authenticateToken, getJobById);
+
+router.get("/admin/jobs", authenticateToken, getAdminJobs);
+
+
+router.post("/post", authenticateToken, postJob);
+
+
+router.get("/:id", authenticateToken, getJobById);
+
 
 export default router;

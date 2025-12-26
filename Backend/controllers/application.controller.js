@@ -32,12 +32,12 @@ export const applyJob = async(req,res)=>{
             .json({message: "Job not found", success:false})
         }
         //create new application
-        const newApplication = await Application({
+        const newApplication = await Application.create({
             job: jobId,
             applicant: userId,
         });
         job.application.push(newApplication._id);
-        await application.save();
+        await job.save();
         return res
         .status(201)
         .json({

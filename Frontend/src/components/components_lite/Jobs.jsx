@@ -22,7 +22,7 @@ function Jobs() {
                     <div className="grid grid-cols-3 gap-4">
                         {allJobs.map((job,index)=>(
                           <div key={job._id}>
-                            <Job key={job}/>
+                            <Job job={job}/>
                             </div>
                         ))}
                     </div>
