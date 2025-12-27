@@ -3,15 +3,15 @@ const companySchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        unique:true
+        unique:"true"
     },
     description:{
         type:String,
-        required:true
+        default:"NA"
     },
     website:{
         type:String,
-        required:true,
+        default:"NA"
     },
      location:{
         type:String,
@@ -19,7 +19,7 @@ const companySchema = new mongoose.Schema({
     },
      logo:{
         type:String, //url for logo
-        
+        default:""
     },
     
     employees:[

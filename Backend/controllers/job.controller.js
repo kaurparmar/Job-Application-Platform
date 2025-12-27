@@ -1,4 +1,5 @@
 import {Job} from "../models/job.model.js"
+import { Application } from "../models/application.model.js";
 import mongoose from "mongoose";
 // Admin job posting
 export const postJob = async(req,res)=>{
@@ -91,7 +92,10 @@ export const getJobById = async(req,res)=>{
 export const getAdminJobs = async(req,res)=>{
     try{
         const adminId=req.id
-        const jobs = await Job.find({created_by: adminId})
+        const jobs = await Job.find({created_by: adminId}).populate({
+            path:"company",
+            sort:{createAt:-1}
+        });
         // if(!jobs || jobs.length === 0){
         //     return res.status(404).json({message:"No Jobs found",status: false});
             
@@ -103,3 +107,44 @@ export const getAdminJobs = async(req,res)=>{
         return res.status(500).json({message: "Server Error",status: false})
     }
 }
+
+
+
+export const getApplicants = async (req, res) => {
+  try {
+    const { id } = await Job.findById(req.params.id);
+    const jobId=id;
+    if (!jobId) {
+      return res.status(400).json({ message: "Job ID is required" });
+    }
+
+    const job = await Job.findById(jobId).populate({
+      path: "application",
+      populate: {
+        path: "applicant",
+        select: "fullname email phoneNumber profile createdAt",
+      },
+    });
+
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+     const applications = await Application.find({ job: id })
+      .populate("applicant", "fullname email")
+      .sort({ createdAt: -1 });
+    return res.status(200).json({
+      success: true,
+      job,
+    });
+  } catch (error) {
+    console.error("Get Applicants Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+};
+
+
+
+

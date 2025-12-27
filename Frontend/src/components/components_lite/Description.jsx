@@ -82,7 +82,7 @@ function Description() {
         <h1 className="font-bold text-xl">{singleJob.title}</h1>
         <div>
             <div className="flex flex-row gap-2 items-center mt-4 flex-wrap mx-auto">
-                          <Badge className={"text-blue-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-blue-600"} variant={"ghost"} >{singleJob.position}</Badge>
+                          <Badge className={"text-blue-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-blue-600"} variant={"ghost"} >{singleJob.position} Open Positions</Badge>
                           <Badge  className={"text-red-500 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-red-600"} variant={"ghost"}>{singleJob.salary}</Badge>
                           <Badge  className={"text-purple-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-purple-600"} variant={"ghost"}>{singleJob.location}</Badge>
                           <Badge  className={"text-black font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-black"} variant={"ghost"}>{singleJob.jobType}</Badge>
@@ -104,7 +104,7 @@ function Description() {
         <h1 className="border-b-2 border-b-gray-400 font-medium py-4">{singleJob.description}</h1>
     <div className="my-4">
         <h1 className="font-bold my-1">
-            Role: <span className = "pl-4 font-normal text-gray-800">{singleJob.position}</span>
+            Role: <span className = "pl-4 font-normal text-gray-800">{singleJob.position} Open Positions</span>
         </h1>
 
          <h1 className="font-bold my-1">

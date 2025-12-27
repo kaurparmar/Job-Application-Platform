@@ -50,7 +50,7 @@ function Job({job}) {
               </p>
             </div>
             <div className="flex flex-row gap-2 items-center mt-4 flex-wrap mx-auto">
-              <Badge className={"text-blue-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-blue-600"} variant={"ghost"} >{position}</Badge>
+              <Badge className={"text-blue-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-blue-600"} variant={"ghost"} >{position} Open Positions</Badge>
               <Badge  className={"text-red-500 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-red-600"} variant={"ghost"}>{salary}</Badge>
               <Badge  className={"text-purple-600 font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-purple-600"} variant={"ghost"}>{location}</Badge>
               <Badge  className={"text-black font-semibold border-2 border-gray-200 rounded-md p-1 hover:border-black"} variant={"ghost"}>{jobType}</Badge>
