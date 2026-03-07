@@ -143,7 +143,7 @@ export const login = async(req,res)=>{
         if(!isMatch){
              return res.status(400).json({
                 message: "Incorrect email or password",
-                success: false,
+                success: false, 
             });
         }
         //check role correctly or not
@@ -183,7 +183,7 @@ export const login = async(req,res)=>{
         })
     }
 };
-export const logout = (req,res)=>{
+export const logout = (req,res)=>{ 
     try{
         return res.status(200).cookie("token","",{maxAge:0})
         .json({

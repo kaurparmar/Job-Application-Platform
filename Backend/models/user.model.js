@@ -10,7 +10,6 @@ const userSchema=new mongoose.Schema({
         required:true,
         trim:true,
         lowercase:true,
-
         unique:true
     },
     phoneNumber:{
@@ -53,5 +52,5 @@ const userSchema=new mongoose.Schema({
             
         },
     }
-},{timestamps:true});
+},{timestamps:true});  
 export const User = mongoose.model("User",userSchema)

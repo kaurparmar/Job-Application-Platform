@@ -57,7 +57,12 @@ export const getAppliedJobs = async (req, res) => {
     console.log("User from middleware:", req.user);
 
     // Fetch applications for the logged-in user
-    const applications = await Application.find({ user: req.user?.id });
+    const applications = await Application.find({ user: req.user?.id }).populate({
+      path: "job",
+      populate: {
+        path: "company",
+      },
+    }).sort({ createdAt: -1 }); // Sort by most recent applications first
 
     console.log("Applications fetched:", applications);
 
