@@ -1,6 +1,6 @@
 import React from 'react'
 import BookmarkButton from '../ui/BookmarkButton'
-import Avatar from '../ui/avatar'
+import Avatar from '../ui/Avatar.jsx'
 import  Badge  from '../ui/Badge.jsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'

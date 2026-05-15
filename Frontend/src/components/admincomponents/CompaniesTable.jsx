@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Avatar from '../ui/avatar'
+import Avatar from '../ui/Avatar.jsx'
 import { useSelector, useDispatch } from 'react-redux'
 import { Pencil } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'

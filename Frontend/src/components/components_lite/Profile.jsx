@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Avatar from "../ui/avatar";
+import Avatar from "../ui/Avatar.jsx";
 import Badge from "../ui/Badge";
 import AppliedJob from "./AppliedJob";
 import EditProfileModal from "./EditProfileModal";
