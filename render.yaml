@@ -15,7 +15,7 @@ services:
       - key: API_SECRET
         sync: false
       - key: CLIENT_ORIGIN
-        value: https://placeholder-frontend.onrender.com
+        value: https://jobnest-frontend-y6ut.onrender.com
       - key: PORT
         value: 5000
     healthCheckPath: /
@@ -27,5 +27,5 @@ services:
     dockerfilePath: ./Frontend/Dockerfile
     envVars:
       - key: VITE_API_URL
-        value: https://placeholder-backend.onrender.com
+        value: https://jobnest-backend-kcab.onrender.com
     plan: free
