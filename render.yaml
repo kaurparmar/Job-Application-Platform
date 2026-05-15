@@ -9,13 +9,13 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: CLOUD_NAME
-        sync: false
+        value: dqiphllua
       - key: CLOUD_API
-        sync: false
+        value: 269528767357663
       - key: API_SECRET
-        sync: false
+        value: Pf11Pb08XrkvOWL5if8U3uMgQSA
       - key: CLIENT_ORIGIN
-        sync: false
+        value: https://placeholder-frontend.onrender.com
       - key: PORT
         value: 5000
     healthCheckPath: /
@@ -27,5 +27,5 @@ services:
     dockerfilePath: ./Frontend/Dockerfile
     envVars:
       - key: VITE_API_URL
-        sync: false
+        value: https://placeholder-backend.onrender.com
     plan: free
