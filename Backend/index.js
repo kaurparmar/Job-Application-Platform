@@ -22,13 +22,17 @@ app.get("/",(req,res)=>{
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
-const corsOptions = {
-    origin: [process.env.CLIENT_ORIGIN || 'http://localhost:5173', 'http://localhost:5121','http://localhost:5174'],
-    credentials: true,
-}
-app.use(cors(corsOptions))
+const corsOrigins = process.env.CLIENT_ORIGIN && process.env.CLIENT_ORIGIN !== ''
+    ? process.env.CLIENT_ORIGIN.split(',').map(origin => origin.trim())
+    : true;
 
-console.log('CORS allowed origins:', corsOptions.origin);
+const corsOptions = {
+    origin: corsOrigins,
+    credentials: true,
+};
+app.use(cors(corsOptions));
+
+console.log('CORS allowed origins:', corsOrigins);
 const PORT=process.env.PORT || 5001;
 // http://localhost:5011/api/users/register
 // http://localhost:5011/api/users/login
