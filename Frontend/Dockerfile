@@ -2,13 +2,15 @@ FROM node:20-alpine as build
 
 WORKDIR /app
 
+ARG VITE_API_URL=http://localhost:5000
+
 COPY Frontend/package*.json ./
 
 RUN npm install
 
 COPY Frontend/ .
 
-RUN npm run build
+RUN VITE_API_URL=$VITE_API_URL npm run build
 
 FROM nginx:alpine
 
