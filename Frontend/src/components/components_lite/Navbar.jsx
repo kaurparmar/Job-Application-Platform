@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Avatar from '../ui/avatar.jsx'
+import Avatar from '../ui/Avatar.jsx'
 import Popover from '../ui/Popover.jsx'
 import {useSelector } from 'react-redux'
 import axios from 'axios'

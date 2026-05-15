@@ -1,6 +1,6 @@
 // Register Page Component with options for recruiter or applicants
 import React, { useState } from 'react'
-import Avatar from '../ui/avatar.jsx'
+import Avatar from '../ui/Avatar.jsx'
 import { Link, useNavigate } from 'react-router-dom' 
 import axios from 'axios'
 import { USER_API_ENDPOINT } from '../../utils/data.js'

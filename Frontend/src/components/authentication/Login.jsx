@@ -1,6 +1,6 @@
 // login page with email password and role selection if no account then register
 import React, { useState } from 'react';
-import Avatar from '../ui/avatar.jsx';
+import Avatar from '../ui/Avatar.jsx';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { USER_API_ENDPOINT } from '../../utils/data.js';
