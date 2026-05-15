@@ -9,11 +9,11 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: CLOUD_NAME
-        value: dqiphllua
+        sync: false
       - key: CLOUD_API
-        value: 269528767357663
+        sync: false
       - key: API_SECRET
-        value: Pf11Pb08XrkvOWL5if8U3uMgQSA
+        sync: false
       - key: CLIENT_ORIGIN
         value: https://placeholder-frontend.onrender.com
       - key: PORT
