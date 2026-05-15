@@ -53,7 +53,7 @@ export const applyJob = async(req,res)=>{
 };
 export const getAppliedJobs = async (req, res) => {
   try {
-    // Make sure req.user exists from your middleware
+    
     console.log("User from middleware:", req.user);
 
     // Fetch applications for the logged-in user
@@ -62,7 +62,7 @@ export const getAppliedJobs = async (req, res) => {
       populate: {
         path: "company",
       },
-    }).sort({ createdAt: -1 }); // Sort by most recent applications first
+    }).sort({ createdAt: -1 }); 
 
     console.log("Applications fetched:", applications);
 

@@ -66,8 +66,8 @@ const AppliedJob = () => {
                   className="border-b transition-colors hover:bg-slate-50/50"
                 >
                   <td className="p-4">{item?.createdAt?.split("T")[0] || "NA"}</td>
-                  <td className="p-4">{item?.job?.title || "NA"}</td>
-                  <td className="p-4">{item?.company?.name || "NA"}</td>
+                  <td>{item?.job?.title || "NA"}</td>
+                  <td>{item?.job?.company?.name || "NA"}</td>
                   <td className="p-4 text-right">
                     <Badge>{item?.status || "Pending"}</Badge>
                   </td>

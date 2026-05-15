@@ -34,8 +34,8 @@ function Navbar() {
     
   return (
     <div className="bg-white mx-6">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 ml-7 mr-10">
-        <h1 className="text-2xl font-bold">
+      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 ml-4 mr-10">
+        <h1 className="text-2xl font-bold mr-7">
           Job<span className="text-blue-600">Nest</span>
         </h1>
 

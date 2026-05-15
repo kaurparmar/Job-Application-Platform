@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - CLOUD_NAME=${CLOUD_NAME}
+      - CLOUD_API=${CLOUD_API}
+      - API_SECRET=${API_SECRET}
+      - CLIENT_ORIGIN=${CLIENT_ORIGIN}
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}

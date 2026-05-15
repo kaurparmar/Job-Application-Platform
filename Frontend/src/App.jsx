@@ -84,3 +84,7 @@ function App() {
 }
 
 export default App
+// need to change in applicant view
+// improve filters in jobs section
+// in recruiter view add edit and info option upgrade
+// add edit jobs in 'jobs' in admin page

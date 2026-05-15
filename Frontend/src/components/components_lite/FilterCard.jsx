@@ -29,31 +29,50 @@ import { useState } from 'react';
     }
 ];
 
-function FilterCard() {
+function FilterCard({setFilters}) {
      const [selectedFilters, setSelectedFilters] = useState({});
 
   const handleChange = (filterType, value) => {
-    setSelectedFilters(prev => ({
-      ...prev,
-      [filterType]: value
-    }));
-  };
+  let updated = { ...selectedFilters };
+
+  if (value === "Any") {
+    delete updated[filterType]; // remove filter
+  } else {
+    updated[filterType] = value;
+  }
+
+  setSelectedFilters(updated);
+  setFilters(updated);
+};
   return (
     <div className="w-full bg-white rounded-md ">
       <h1 className="font-bold text-lg">Filter Jobs</h1>
+      <button
+  onClick={() => {
+    setSelectedFilters({});
+    setFilters({});
+  }}
+  className="mb-3 p-2 text-sm bg-gray-200 rounded hover:bg-gray-300"
+>
+  Reset Filters
+</button>
       <hr className="mt-1 mb-2 "/>
        {filterData.map((filter, index) => (
         <fieldset key={index} style={{ marginBottom: '20px', border: '1px solid #ccc', padding: '10px' }}>
           <legend  className="p-2 ml-2" style={{ fontWeight: 'bold' }}>{filter.filterType}</legend>
-          {filter.array.map((option) => (
+          {["Any", ...filter.array].map((option) => (
             <div key={option} style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '5px 0' }}>
               <input
                 type="radio"
                 id={`${filter.filterType}-${option}`}
                 name={filter.filterType} // Groups radio buttons by category
                 value={option}
-                checked={selectedFilters[filter.filterType] === option}
-                onChange={() => handleChange(filter.filterType, option)}
+                checked={
+                  option === "Any"
+                    ? !selectedFilters[filter.filterType]
+                    : selectedFilters[filter.filterType] === option
+                }
+          onChange={() => handleChange(filter.filterType, option)}
               />
               <label htmlFor={`${filter.filterType}-${option}`} style={{ cursor: 'pointer' }}>
                 {option}

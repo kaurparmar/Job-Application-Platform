@@ -33,7 +33,7 @@ function CompaniesTable() {
     fetchCompanies()
   }, [dispatch])
 
-  // ✅ Filter companies properly
+  
   const filteredCompanies = companies.filter((company) =>
     company.name.toLowerCase().includes(searchCompanyByText.toLowerCase())
   )
@@ -76,8 +76,10 @@ function CompaniesTable() {
                 <td className="p-4 font-medium">{company.name}</td>
 
                 <td className="p-4 text-gray-600">
-                  {company.createdAt.split("T")[0]}
-                </td>
+  {company.createdAt
+    ? new Date(company.createdAt).toLocaleDateString()
+    : "N/A"}
+</td>
 
                 <td className="p-4 text-center relative">
                   <button
@@ -88,10 +90,10 @@ function CompaniesTable() {
                   </button>
 
                   {open === company._id && (
-                    <div className="absolute right-6 mt-2 bg-white border rounded shadow p-3">
+                    <div className="absolute right-6 mt-2 bg-white border rounded shadow p-3 z-1">
                       <button
                         onClick={() => navigate(`/admin/company/${company._id}`)}
-                        className="flex items-center gap-2 hover:bg-gray-100 p-2"
+                        className="flex items-center gap-2 hover:bg-gray-100 p-2 "
                       >
                         <Pencil size={16} />
                         Edit Company

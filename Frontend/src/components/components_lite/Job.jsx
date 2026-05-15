@@ -17,24 +17,28 @@ function Job({job}) {
     salary,
     location,
     jobType,
+    createdAt,
     _id,
+    
   } = job;
   const navigate=useNavigate()
   const [isBookmarked, setIsBookmarked] = React.useState(false)
-  
+  const daysAgo = Math.floor(
+  (new Date() - new Date(createdAt)) / (1000 * 60 * 60 * 24)
+);
 
   // const allJobs = useSelector((state)=>state.jobs?.allJobs || [])
   const jobId="jdfj";
   return (
     <div className="p-5 flex lg:flex-row flex-col flex-wrap items-center rounded-md shadow-xl bg-white border border-gray-200 cursor-pointer hover-shadow-2xl hover:shadow-blue-200 hover:p-3 ">
-      <p className="mr-2">3 days ago </p>
+      <p className="mr-2 mb-4">{Number.isNaN(daysAgo) ? "" : `${daysAgo} days ago`}</p>
       
         <BookmarkButton/>
       
       <div className="flex flex-col items-center gap-2 my-5">
       <button className="p-6">
         <Avatar
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAye9yffzT_D9mneaR1PPL3iAUGPa0E64H-w&s"
+                      src={company?.logo || null}
                       alt="User Avatar"
                       size={60}
                     />
